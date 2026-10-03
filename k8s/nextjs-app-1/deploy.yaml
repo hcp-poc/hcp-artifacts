@@ -18,6 +18,8 @@ spec:
         app: nextjs-app-1
 
     spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
       containers:
         - name: nextjs-app-1
           image: rajvam6806/nextjs-app-1:latest
