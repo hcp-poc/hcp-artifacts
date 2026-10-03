@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: nextjs-app-1
-  namespace: dev
+  namespace: qa
 
 spec:
   replicas: 1
