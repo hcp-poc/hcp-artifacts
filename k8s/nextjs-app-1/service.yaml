@@ -3,7 +3,7 @@ kind: Service
 
 metadata:
   name: nextjs-app-1
-  namespace: dev
+  namespace: qa
 
 spec:
   selector:
