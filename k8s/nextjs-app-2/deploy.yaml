@@ -3,8 +3,7 @@ kind: Deployment
 
 metadata:
   name: nextjs-app-2
-  namespace: uat
-
+  namespace: prod
 spec:
   replicas: 1
 
@@ -22,7 +21,7 @@ spec:
         - name: dockerhub-secret
       containers:
         - name: nextjs-app-2
-          image: rajvam6806/nextjs-app-2:latest
+          image: rajvam6806/nextjs-app-2:tagversion
           imagePullPolicy: Always
 
           ports:
