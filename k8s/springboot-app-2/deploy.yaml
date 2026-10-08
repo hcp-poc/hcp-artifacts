@@ -1,0 +1,33 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: springboot-app-2
+  namespace: uat
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: springboot-app-2
+
+  template:
+    metadata:
+      labels:
+        app: springboot-app-2
+
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: springboot-app-2
+          image: rajvam6806/springboot-app-2:latest
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8080
+
+        

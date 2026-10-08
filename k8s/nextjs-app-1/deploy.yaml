@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nextjs-app-1
+  namespace: uat
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: nextjs-app-1
+
+  template:
+    metadata:
+      labels:
+        app: nextjs-app-1
+
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: nextjs-app-1
+          image: rajvam6806/nextjs-app-1:latest
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: NODE_ENV
+              value: "production"
